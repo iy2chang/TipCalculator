@@ -21,10 +21,14 @@ public class MainActivity extends AppCompatActivity {
         if(view.getId() == R.id.BCalc){
             EditText a1 = (EditText) findViewById(R.id.TFAmount);
             EditText a2 = (EditText) findViewById(R.id.TFPercent);
-            Double num1, num2;
-            num1 = Double.parseDouble(a1.getText().toString());
-            num2 = Double.parseDouble(a2.getText().toString());
-
+            Double num1 = 0.0, num2 = 0.0;
+            try {
+                num1 = Double.parseDouble(a1.getText().toString());
+                num2 = Double.parseDouble(a2.getText().toString());
+            }
+            catch(NumberFormatException nfe){
+                System.out.println("please enter numbers");
+            }
             double answer = 0;
             answer = (num1 * num2) / 100 + num1;
 
