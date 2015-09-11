@@ -56,7 +56,12 @@
         android:layout_weight="0.05"
         android:onClick="onCalculate" />
 
-
+    <ImageView
+        android:layout_width="96dp"
+        android:layout_height="152dp"
+        android:id="@+id/imageView"
+        android:layout_gravity="center_horizontal"
+        android:src="@mipmap/ic_launcher" />
 
 
 </LinearLayout>
