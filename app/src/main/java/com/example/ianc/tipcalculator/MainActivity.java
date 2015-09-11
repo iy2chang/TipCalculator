@@ -1,5 +1,7 @@
 package com.example.ianc.tipcalculator;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,16 @@ public class MainActivity extends AppCompatActivity {
                 num2 = Double.parseDouble(a2.getText().toString());
             }
             catch(NumberFormatException nfe){
+                // dialog box for error input
+                AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+                alertDialog.setTitle("Error");
+                alertDialog.setMessage("Please enter a number");
+                alertDialog.setButton("OK", new DialogInterface.OnClickListener(){
+                    public void onClick(DialogInterface dialog, int which){
+
+                    }
+                });
+                alertDialog.show();
                 System.out.println("please enter numbers");
             }
             double answer = 0;
